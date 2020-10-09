@@ -19,7 +19,6 @@ export function getUser(id,username,profile_pic){
 
 export default function reducer(state=initialState,action){
     const {type,payload} = action;
-    console.log(action);
     switch(type){
         case GET_USER:
             console.log(payload);

@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-const { response } = require('express');
 module.exports = {
     register: async (req,res)=>{
         const {username, password} = req.body;
@@ -30,7 +29,6 @@ module.exports = {
         const db = req.app.get('db');
 
         const user = await db.check_user({username});
-        console.log(user[0].password)
         if(!user[0])
             return res.status(401).send('User not found');
 

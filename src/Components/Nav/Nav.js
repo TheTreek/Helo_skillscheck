@@ -9,7 +9,10 @@ class Nav extends Component{
         if(this.props.location.pathname === '/'){
             return null;
         }
-        console.log(this.props);
+        // }else if(!this.props.username){
+        //     this.props.history.push('/');
+        //     return null;
+        // }
         return(
             <nav id='nav'>
                 <span id='nav-profile'>

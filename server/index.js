@@ -1,16 +1,15 @@
-const controller = require('./controller');
-
 require('dotenv').config();
 const express = require('express'),
     massive = require('massive'),
     session = require('express-session'),
-    constroller = require('./controller'),
+    controller = require('./controller'),
+    post_controller = require('./post_controller'),
     {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
     app = express();
 
 app.use(express.json());
 
-//Set up sessions
+//Set up sessions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 app.use(session({
     resave: false,
     saveUninitialized: true,
@@ -19,13 +18,19 @@ app.use(session({
 }));
 
 
-//Endpoints
+//Endpoints -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//Auth
 app.post('/api/register', controller.register);
 app.post('/api/login',controller.login);
 app.get('/api/logout',controller.logout);
 
+//Posts
+app.get('/api/posts',post_controller.getAll);
+app.get('/api/post/:id',post_controller.getOne);
 
-//Connect to server
+
+//Connect to server-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}

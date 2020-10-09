@@ -6,6 +6,10 @@
     align-items: center;
     background-image: linear-gradient(0deg,#ff7abe,#ff9770);
     color: white;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100vh;
 }
 
 .nav-links{

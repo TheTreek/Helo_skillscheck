@@ -1,0 +1,32 @@
+.post{
+    width: 100%;
+    background-color:white;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-users{
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.post-profile-img{
+    height: 70px;
+    border-radius: 100%;
+    border: 0.01em black solid;
+    margin: 10px;
+}
+
+.post h1{
+    margin-left: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+.post-username{
+    text-decoration: none;
+}
