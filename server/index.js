@@ -28,6 +28,7 @@ app.get('/api/logout',controller.logout);
 //Posts
 app.get('/api/posts',post_controller.getAll);
 app.get('/api/post/:id',post_controller.getOne);
+app.post('/api/post',post_controller.newPost)
 
 
 //Connect to server-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
